@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Новый товар" %}{% endblock %}
+
+{% block content %}
+    <div class="form">
+        <form action="{% url 'product_update' id=product.id %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+            <label for="id_name">{% trans "Наименование товара" %}: </label>
+            <input type="text" name="name" id="id_name" value="{{product.name}}">
+            <input type="hidden" name="id" value="{{product.id}}">
+            <br>
+            <label for="id_category">{% trans "Категория" %}: </label>
+            <input type="text" name="category" id="id_category" value="{{product.category}}">
+            <br>
+            <label for="id_price">{% trans "Цена" %}: </label>
+            <input type="text" name="price" id="id_price" value="{{product.price}}">
+            <br>
+            <label for="id_quantity">{% trans "Количество" %}: </label>
+            <input type="text" name="quantity" id="id_quantity" value="{{product.quantity}}">
+            <br>
+            <label for="id_photo">{% trans "Фотография" %}: </label>
+            <input type="file" name="photo" id="id_photo" value="{{product.photo}}">
+            <br><br>
+            <input type="submit" value='{% trans "Сохранить" %}' name="add_product" />
+        </form>
+    </div>
+{% endblock %}

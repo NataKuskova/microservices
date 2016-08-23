@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Оформление заказа" %}{% endblock %}
+
+{% block content %}
+
+<div class="form">
+    <h1>{% trans "Оформление заказа" %}</h1>
+    <br>
+    {% if not cart.count %}
+        <p class="success">{% blocktrans %}Ваш заказ успешно оформлен, спасибо за покупку{% endblocktrans %}!</p>
+    {% elif product %}
+        {% for prod in product %}
+            <p class="not_available">{% blocktrans with prod_name=prod.name prod_quantity=prod.quantity %}Товара <span>{{prod_name}}</span> на складе осталось <span>{{prod_quantity}}</span> грамм.{% endblocktrans %}</p>
+        {% endfor %}
+    {% else %}
+        <form action="" method="post">{% csrf_token %}
+            <table class="products">
+                <thead>
+                    <tr>
+                        <td>{% trans "Наименование товара" %}</td>
+                        <td>{% trans "Цена (грн)" %}</td>
+                        <td>{% trans "Количество" %}</td>
+                        <td>{% trans "Сумма (грн)" %}</td>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in cart %}
+                    <tr class="hover_tr">
+                        <td>{{item.product.name}} {% trans "(50гр)" %}</td>
+                        <td>{{item.product.price}}</td>
+                        <td>{{item.quantity}}</td>
+                        <td>{{ item.total_price }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <p class="summary">{% trans "Общая сумма" %}: <span>{{cart.summary}}</span> {% trans "грн" %}</p>
+
+            <label for="{{form.name.id_for_label}}">{% trans "Имя" %}: </label>
+            {{form.name}}
+            <br>
+            <label for="{{form.surname.id_for_label}}">{% trans "Фамилия" %}: </label>
+            {{form.surname}}
+            <br>
+            <label for="{{form.address.id_for_label}}">{% trans "Город" %}: </label>
+            {{form.address}}
+            <br>
+            <label for="{{form.phone.id_for_label}}">{% trans "Телефон" %}: </label>
+            {{form.phone}}
+            <br>
+            <label for="{{form.email.id_for_label}}">E-mail: </label>
+            {{form.email}}
+            <br>
+            <input type="submit" name="order" value='{% trans "Заказать" %}' class="cart_btn">
+        </form>
+    {% endif %}
+</div>
+
+{% endblock %}

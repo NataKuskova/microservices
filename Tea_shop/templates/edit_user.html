@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% block title %}{% trans "Новый покупатель" %}{% endblock %}
+
+{% block content %}
+    <div class="form">
+        <form action="" method="post">{% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value='{% trans "Сохранить" %}' name="add_buyer" />
+        </form>
+    </div>
+{% endblock %}

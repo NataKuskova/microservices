@@ -1,0 +1,20 @@
+{% load i18n %}
+<form action='{% url "products_list" %}' method="GET">
+    <label for="search">{% trans "Поиск" %}:</label>
+    <input type="text" id="search" name="search" value='{{request.GET.search}}'/>
+
+    <label for="sort">{% trans "Сортировать по" %}:</label>
+    <select name="sort" id="sort">
+        <option value="name" {% if request.GET.sort == 'name' %}selected{% endif %}>{% trans "Наименованию" %}</option>
+        <option value="price" {% if request.GET.sort == 'price' %}selected{% endif %}>{% trans "Цене" %}</option>
+        <option value="quantity" {% if request.GET.sort == 'quantity' %}selected{% endif %}>{% trans "Количеству" %}</option>
+    </select>
+    <select name="by">
+        <option value="" {% if request.GET.by == '' %}selected{% endif %}>{% trans "По возрастанию" %}</option>
+        <option value="-" {% if request.GET.by == '-' %}selected{% endif %}>{% trans "По убыванию" %}</option>
+    </select>
+
+    <button type="submit">{% trans "Поиск" %}</button>
+</form>
+
+

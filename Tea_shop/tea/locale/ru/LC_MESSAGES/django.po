@@ -1,0 +1,252 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-21 17:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: Tea_shop/settings.py:134
+msgid "Russian"
+msgstr ""
+
+#: Tea_shop/settings.py:135
+msgid "English"
+msgstr ""
+
+#: tea/forms.py:31 templates/order.html:50
+msgid "Телефон"
+msgstr ""
+
+#: tea/forms.py:32 templates/order.html:41
+msgid "Имя"
+msgstr ""
+
+#: tea/forms.py:33 templates/order.html:44
+msgid "Фамилия"
+msgstr ""
+
+#: tea/forms.py:34
+msgid "Адрес"
+msgstr ""
+
+#: templates/base.html:25
+msgid "Добро пожаловать"
+msgstr ""
+
+#: templates/base.html:26
+msgid "Выход"
+msgstr ""
+
+#: templates/base.html:28
+msgid "Вход"
+msgstr ""
+
+#: templates/base.html:29 templates/register.html:3
+msgid "Регистрация"
+msgstr ""
+
+#: templates/base.html:31
+msgid "Все товары"
+msgstr ""
+
+#: templates/cart.html:4 templates/cart.html:9
+msgid "Корзина"
+msgstr ""
+
+#: templates/cart.html:12
+msgid "Ваша корзина товаров пуста"
+msgstr ""
+
+#: templates/cart.html:18 templates/edit_product.html:8 templates/index.html:25
+#: templates/order.html:21
+msgid "Наименование товара"
+msgstr ""
+
+#: templates/cart.html:19 templates/order.html:22
+msgid "Цена (грн)"
+msgstr ""
+
+#: templates/cart.html:20 templates/edit_product.html:14
+#: templates/index.html:28 templates/order.html:23 templates/product.html:36
+msgid "Количество"
+msgstr ""
+
+#: templates/cart.html:21 templates/order.html:24
+msgid "Сумма (грн)"
+msgstr ""
+
+#. Translators: грамм
+#: templates/cart.html:29 templates/order.html:30
+msgid "(50гр)"
+msgstr ""
+
+#: templates/cart.html:36 templates/product.html:11
+msgid "Удалить"
+msgstr ""
+
+#: templates/cart.html:42 templates/order.html:39
+msgid "Общая сумма"
+msgstr ""
+
+#: templates/cart.html:42 templates/order.html:39
+msgid "грн"
+msgstr ""
+
+#: templates/cart.html:43
+msgid "Очистить корзину"
+msgstr ""
+
+#: templates/cart.html:44
+msgid "Обновить"
+msgstr ""
+
+#: templates/cart.html:48
+msgid "Оформить заказ"
+msgstr ""
+
+#: templates/edit_product.html:3
+msgid "Новый товар"
+msgstr ""
+
+#: templates/edit_product.html:10 templates/product.html:19
+msgid "Категория"
+msgstr ""
+
+#: templates/edit_product.html:12
+msgid "Цена"
+msgstr ""
+
+#: templates/edit_product.html:16
+msgid "Фотография"
+msgstr ""
+
+#: templates/edit_product.html:19 templates/edit_user.html:10
+msgid "Сохранить"
+msgstr ""
+
+#: templates/edit_user.html:4 templates/index.html:15
+msgid "Новый покупатель"
+msgstr ""
+
+#: templates/index.html:4
+msgid "Каталог"
+msgstr ""
+
+#: templates/index.html:12
+msgid "Добавить новый товар"
+msgstr ""
+
+#: templates/index.html:24
+msgid "Изображение"
+msgstr ""
+
+#: templates/index.html:26
+msgid "Цена за 50 грамм"
+msgstr ""
+
+#: templates/index.html:30
+msgid "Наличие"
+msgstr ""
+
+#: templates/login.html:3
+msgid "Авторизация"
+msgstr ""
+
+#: templates/login.html:10
+msgid "Войти"
+msgstr ""
+
+#: templates/order.html:3 templates/order.html:8
+msgid "Оформление заказа"
+msgstr ""
+
+#: templates/order.html:11
+msgid "Ваш заказ успешно оформлен, спасибо за покупку"
+msgstr ""
+
+#: templates/order.html:14
+#, python-format
+msgid ""
+"Товара <span>%(prod_name)s</span> на складе осталось <span>"
+"%(prod_quantity)s</span> грамм."
+msgstr ""
+
+#: templates/order.html:47
+msgid "Город"
+msgstr ""
+
+#: templates/order.html:56
+msgid "Заказать"
+msgstr ""
+
+#: templates/product.html:8
+msgid "Редактировать"
+msgstr ""
+
+#: templates/product.html:22
+msgid "Есть в наличии"
+msgstr ""
+
+#: templates/product.html:24
+msgid "Нет в наличии"
+msgstr ""
+
+#: templates/product.html:28
+#, python-format
+msgid "Цена: %(prod_price)s грн за 50 грамм"
+msgstr ""
+
+#: templates/product.html:30 templates/product.html:32
+msgid "Купить"
+msgstr ""
+
+#: templates/product.html:38
+msgid "Товар добавил"
+msgstr ""
+
+#: templates/register.html:34
+msgid "Зарегистрироваться"
+msgstr ""
+
+#: templates/sort_and_search.html:3 templates/sort_and_search.html:17
+msgid "Поиск"
+msgstr ""
+
+#: templates/sort_and_search.html:6
+msgid "Сортировать по"
+msgstr ""
+
+#: templates/sort_and_search.html:8
+msgid "Наименованию"
+msgstr ""
+
+#: templates/sort_and_search.html:9
+msgid "Цене"
+msgstr ""
+
+#: templates/sort_and_search.html:10
+msgid "Количеству"
+msgstr ""
+
+#: templates/sort_and_search.html:13
+msgid "По возрастанию"
+msgstr ""
+
+#: templates/sort_and_search.html:14
+msgid "По убыванию"
+msgstr ""

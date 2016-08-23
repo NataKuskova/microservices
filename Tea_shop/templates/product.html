@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+
+    {# if user.is_authenticated and user == product.user #}
+        <a href="{% url 'product_update' id=product.id %}" class="update">{% trans "Редактировать" %}</a>
+        <form action="{% url 'product_delete' id=product.id %}" method="post" class="delete">
+            {% csrf_token %}
+            <button type="submit">{% trans "Удалить" %}</button>
+        </form>
+    {# endif #}
+
+    <div class="product_overview">
+        <img src="{{ product.photo }}">
+        <div class="details">
+            <h1>{{ product.name }}</h1>
+            <p>{% trans "Категория" %}: {{ product.category }}</p>
+
+            {% if product.quantity > 0 %}
+                <p class="yes">{% trans "Есть в наличии" %}</p>
+            {% else %}
+                <p class="no">{% trans "Нет в наличии" %}</p>
+            {% endif %}
+
+            <!--<p id="link_product">{{request.build_absolute_uri}}</p>-->
+            <p>{% blocktrans with prod_price=product.price %}Цена: {{ prod_price }} грн за 50 грамм{% endblocktrans %}</p>
+            {% if product.quantity >= 50  %}
+                <a href="{% url 'add_to_cart' id=product.id %}" class="add_to_cart_btn enabled">{% trans "Купить" %}</a>
+            {% else %}
+                <a href="" class="add_to_cart_btn disabled">{% trans "Купить" %}</a>
+            {% endif %}
+            <br><br>
+            {% if user.is_authenticated %}
+                <p>{% trans "Количество" %}: {{ product.quantity }}</p>
+            {% endif %}
+            <p>{% trans "Товар добавил" %}: {{product.user}}</p>
+
+        </div>
+    </div>
+{% endblock %}
